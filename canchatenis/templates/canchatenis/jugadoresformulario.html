@@ -1,0 +1,17 @@
+{% extends "canchatenis/base.html" %}
+
+{% load static %}
+
+{% block titulo %} Formulario Jugadores {% endblock  %}
+
+{% block main %}
+
+    <form actions="" method="POST">
+        {% csrf_token %} 
+        <table style="color: aliceblue;">
+            {{ miFormulario.as_table }} 
+        </table>
+        <input type="submit" value="Enviar">
+    </form>
+    
+{% endblock main  %}

@@ -1,0 +1,13 @@
+{% extends 'canchatenis/base.html' %}
+{% load static %}
+
+
+{% block main %}
+
+    {% for entrenamiento in entrenamientos %}
+        <p style="color: aliceblue;">El nombre del entrenamiento es: {{entrenamiento.nombre}}</p>
+    {% endfor %}
+    
+{% endblock main  %}
+    
+
