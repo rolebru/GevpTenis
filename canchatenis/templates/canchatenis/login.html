@@ -1,0 +1,15 @@
+{% extends "canchatenis/base.html" %}
+
+{% load static %}
+
+{% block titulo %} Login {% endblock  %}
+
+{% block main %}
+
+    <form action="" method="POST">
+        {% csrf_token %}
+            {{ form.as_p }}
+        <button type="submit">Inciar sesion</button>
+    </form>
+
+{% endblock main%}

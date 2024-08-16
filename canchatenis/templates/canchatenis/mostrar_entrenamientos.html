@@ -1,0 +1,15 @@
+{% extends 'canchatenis/base.html' %}
+
+{% load static %}
+
+{% block title %} Inicio {% endblock title %}
+
+{% block main %}
+
+
+{% for entrenamiento in entrenamientos %}
+    <li style="color: white;">Entrenamientos: {{ entrenamiento.nombre }} | Comision: {{ entrenamiento.comision }}</li>
+{% endfor %}
+
+
+{% endblock main %}
