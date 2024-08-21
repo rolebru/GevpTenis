@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate
-from users.forms import UserRegisterForm
+from users.forms import UserRegisterForm, UserEditForm
 def login_request(request):
 
     msg_login = ""
@@ -43,3 +43,17 @@ def register(request):
 
     form = UserRegisterForm()     
     return render(request,"users/registro.html" ,  {"form":form, "msg_register": msg_register})
+
+def editar_perfil(request):
+    usuario = request.user
+
+    if request.method == "POST":
+        mi_formulario = UserEditForm(request.POST, instance=usuario )
+        if mi_formulario.is_valid():
+            mi_formulario.save()
+            return render(request, "canchatenis/index.html")
+    else:
+        mi_formulario = UserEditForm(instance=usuario)
+
+    return render(request, "users/editar_perfil.html",{"form":mi_formulario} )
+
