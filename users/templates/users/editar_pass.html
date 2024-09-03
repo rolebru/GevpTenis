@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %} Editar Perfil {% endblock title %}
+{% block title %} Editar Contraseña {% endblock title %}
 
 {% block main %}
 
@@ -16,9 +16,8 @@
             <form style="color: aliceblue;" action="" method="POST">
                 {% csrf_token %}
                 <table>
-                    {{ form.as_table }}
+                    {{ form }}
                 </table>
-                <a class="btn btn-primary " href="{% url 'CambiarContraseña'%}">Cambiar pass</a>
                 <input type="submit" value="Actualizar">
 
             </form>
